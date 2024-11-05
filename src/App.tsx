@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-
+      
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="container mx-auto px-4">
@@ -27,10 +27,7 @@ function App() {
               Shaping the Future of Digital Products
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Product Manager with a strategic vision and a passion for
-              impactful digital experiences. Skilled in building partnerships,
-              creating AI-driven solutions, and enhancing product value in
-              entertainment and tech.
+              Product Manager with a strategic vision and a passion for impactful digital experiences. Skilled in building partnerships, creating AI-driven solutions, and enhancing product value in entertainment and tech.
             </p>
             <div className="flex justify-center space-x-4">
               <button
@@ -53,9 +50,7 @@ function App() {
       {/* Experience Section */}
       <section id="experience" className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Professional Experience
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Professional Experience</h2>
           <div className="max-w-3xl mx-auto space-y-8">
             <div className="flex gap-4 p-6 bg-white rounded-lg shadow-sm">
               <Briefcase className="w-6 h-6 text-blue-600 flex-shrink-0" />
@@ -63,26 +58,30 @@ function App() {
                 <h3 className="text-xl font-semibold">Product Manager</h3>
                 <p className="text-gray-600">WebEngage • 2024 - Present</p>
                 <p className="mt-2">
-                  Leading strategy and driving innovation in customer engagement
-                  technology. Focusing on enhancing product vision and shaping
-                  the roadmap to support business goals and user satisfaction.
+                  Leading strategy and driving innovation in customer engagement technology. Focusing on enhancing product vision and shaping the roadmap to support business goals and user satisfaction.
                 </p>
               </div>
             </div>
-
+            
             <div className="flex gap-4 p-6 bg-white rounded-lg shadow-sm">
               <Code className="w-6 h-6 text-blue-600 flex-shrink-0" />
               <div>
                 <h3 className="text-xl font-semibold">Product Manager</h3>
                 <p className="text-gray-600">Eros Now • 2023 - 2024</p>
                 <p className="mt-2">
-                  Spearheaded the Eros Now OTT relaunch, leveraging AI for
-                  content recommendations and interactive features. Built and
-                  managed key partnerships, enhancing Eros Now’s presence on
-                  multiple platforms.
+                  Spearheaded the Eros Now OTT relaunch, leveraging AI for content recommendations and interactive features. Built and managed key partnerships, enhancing Eros Now’s presence on multiple platforms.
                 </p>
               </div>
             </div>
+          </div>
+          {/* Read More Link */}
+          <div className="text-center mt-6">
+            <a
+              href="/full-experience"
+              className="text-blue-600 hover:underline font-semibold"
+            >
+              Read More about my Experience
+            </a>
           </div>
         </div>
       </section>
@@ -95,14 +94,10 @@ function App() {
             <div className="flex gap-4 p-6 bg-white rounded-lg shadow-sm">
               <GraduationCap className="w-6 h-6 text-blue-600 flex-shrink-0" />
               <div>
-                <h3 className="text-xl font-semibold">
-                  Post Graduate Diploma in Management
-                </h3>
+                <h3 className="text-xl font-semibold">Post Graduate Diploma in Management</h3>
                 <p className="text-gray-600">MICA, Ahmedabad • 2019 - 2021</p>
                 <p className="mt-2">
-                  Specialized in Advertising and Brand Management with a focus
-                  on digital media, strategic marketing, and consumer
-                  engagement.
+                  Specialized in Advertising and Brand Management with a focus on digital media, strategic marketing, and consumer engagement.
                 </p>
               </div>
             </div>
@@ -113,37 +108,61 @@ function App() {
       {/* Blog Section */}
       <section id="blog" className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Latest Insights
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Latest Insights</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((post) => (
-              <article
-                key={post}
-                className="bg-white rounded-lg shadow-sm overflow-hidden"
-              >
-                <img
-                  src={`https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29kaW5nfGVufDB8fDB8fHww`}
-                  alt="Blog post"
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">
-                    AI’s Role in Product Management
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Insights on integrating AI for enhanced product strategy and
-                    user engagement.
-                  </p>
-                  <a
-                    href="#"
-                    className="text-blue-600 hover:text-blue-700 inline-flex items-center"
-                  >
-                    Read More <ArrowRight className="w-4 h-4 ml-2" />
-                  </a>
-                </div>
-              </article>
-            ))}
+            {/* Blog Post 1 */}
+            <article className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1720903984809-62de3f4ca814?q=80&w=2825&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Blog post"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Redefining Customer Engagement: From OTT to AI</h3>
+                <p className="text-gray-600 mb-4">
+                  Exploring AI’s evolving role in transforming user engagement strategies for OTT platforms and beyond.
+                </p>
+                <a href="#" className="text-blue-600 hover:text-blue-700 inline-flex items-center">
+                  Read More <ArrowRight className="w-4 h-4 ml-2" />
+                </a>
+              </div>
+            </article>
+
+            {/* Blog Post 2 */}
+            <article className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1544725121-be3bf52e2dc8?q=80&w=2934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Blog post"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Mastering Product Partnerships in a Competitive Landscape</h3>
+                <p className="text-gray-600 mb-4">
+                  A deep dive into forging and sustaining valuable partnerships in digital product ecosystems.
+                </p>
+                <a href="#" className="text-blue-600 hover:text-blue-700 inline-flex items-center">
+                  Read More <ArrowRight className="w-4 h-4 ml-2" />
+                </a>
+              </div>
+            </article>
+
+            {/* Blog Post 3 */}
+            <article className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=2906&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Blog post"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">AI and Product Strategy: Crafting Tailored User Experiences</h3>
+                <p className="text-gray-600 mb-4">
+                  Insights on how AI-driven personalization can elevate user experience and product relevance in a crowded market.
+                </p>
+                <a href="#" className="text-blue-600 hover:text-blue-700 inline-flex items-center">
+                  Read More <ArrowRight className="w-4 h-4 ml-2" />
+                </a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
