@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold">Portfolio</h3>
+            <h3 className="text-xl font-bold">Ryan Dsouza</h3>
             <p className="text-gray-400">Building amazing digital experiences with cutting-edge technology.</p>
           </div>
           
@@ -26,7 +26,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li className="flex items-center space-x-2">
                 <Mail className="w-4 h-4" />
-                <span className="text-gray-400">hello@example.com</span>
+                <span className="text-gray-400">ryandsouza4@gmail.com</span>
               </li>
             </ul>
           </div>

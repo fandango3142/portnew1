@@ -9,7 +9,7 @@ export default function Header() {
     <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
       <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <a href="/" className="text-2xl font-bold text-gray-800">Portfolio</a>
+          <a href="/" className="text-2xl font-bold text-gray-800">Ryan Dsouza</a>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
