@@ -9,15 +9,66 @@ export default function LeadForm({ onClose }: LeadFormProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     company: '',
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [errors, setErrors] = useState({
+    email: '',
+    phone: ''
+  });
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhone = (phone: string) => {
+    const phoneRegex = /^\+?\d{10,15}$/; // Allows 10 to 15 digits with optional leading "+"
+    return phoneRegex.test(phone);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log('Form submitted:', formData);
-    onClose();
+
+    // Validate fields
+    let emailError = '';
+    let phoneError = '';
+
+    if (!validateEmail(formData.email)) {
+      emailError = 'Please enter a valid email address.';
+    }
+
+    if (!validatePhone(formData.phone)) {
+      phoneError = 'Please enter a valid phone number (10-15 digits).';
+    }
+
+    if (emailError || phoneError) {
+      setErrors({ email: emailError, phone: phoneError });
+      return;
+    }
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxjMhXnXmYsuTHxXgCb3qwDU_48M2d1a-LY2BemTzRNZvexmb7rnKjifRfbYP3-XcEXGg/exec";
+
+    try {
+      const response = await fetch(scriptURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log("Form submitted:", formData);
+        onClose();
+      } else {
+        console.error("Error submitting form");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
@@ -56,6 +107,20 @@ export default function LeadForm({ onClose }: LeadFormProps) {
               onChange={(e) => setFormData({...formData, email: e.target.value})}
               required
             />
+            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+          </div>
+
+          <div>
+            <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              value={formData.phone}
+              onChange={(e) => setFormData({...formData, phone: e.target.value})}
+              required
+            />
+            {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
           </div>
           
           <div>
@@ -66,6 +131,7 @@ export default function LeadForm({ onClose }: LeadFormProps) {
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
               value={formData.company}
               onChange={(e) => setFormData({...formData, company: e.target.value})}
+              required
             />
           </div>
           
